@@ -24,15 +24,16 @@
 	</params>
 
 	<tasks>
-		<task id="filtering_1"/>
-		<task id="filtering_2" params="batchSize_filtering_2"/>
-		<task id="reformat" after="filtering_1 filtering_2"/>
-		<task id="merge" after="reformat"/>
-		<task id="disambiguate" after="merge"/>
-		<task id="reverse-complement" after="disambiguate" params="batchSize_reverse_complement"/>
-        
-		<!-- final-task is not a SEDA command and thus uses "src" to specify the path to the bash script that must
-        be executed. -->	
-		<task id="final-task" after="reverse-complement" src="task-scripts/final-task.sh"></task>
+		<task id="rename-header-multipart"/>
+		<task id="rename-header-replace-word_1" after="rename-header-multipart"/>
+		<task id="rename-header-replace-word_2" after="rename-header-replace-word_1"/>
+		<task id="rename-header-add-word" after="rename-header-replace-word_2"/>
 	</tasks>
+	
+	<metadata>
+		<task-description id="rename-header-multipart">Header: keeps the text up to the accession number.</task-description>
+		<task-description id="rename-header-replace-word_1">Header: replaces “lcl|” by nothing. </task-description>
+		<task-description id="rename-header-replace-word_2">Header: replaces “.” by “_”. </task-description>
+		<task-description id="rename-header-add-word">Header: adds the string “_suffix_” and an index.</task-description>
+	</metadata>
 </pipeline>
