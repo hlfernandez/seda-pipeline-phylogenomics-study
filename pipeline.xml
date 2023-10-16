@@ -29,6 +29,7 @@
 		<task id="rename-header-replace-word_2" after="rename-header-replace-word_1"/>
 		<task id="rename-header-add-word" after="rename-header-replace-word_2"/>
 		<task id="blast-ortholog" after="rename-header-add-word"/>
+		<task id="filtering_1" after="blast-ortholog"/>
 	</tasks>
 	
 	<metadata>
@@ -37,5 +38,6 @@
 		<task-description id="rename-header-replace-word_2">Header: replaces “.” by “_”. </task-description>
 		<task-description id="rename-header-add-word">Header: adds the string “_suffix_” and an index.</task-description>
 		<task-description id="blast-ortholog">BLAST: two-way ortholog identification operation.</task-description>
+		<task-description id="filtering_1">Sequence filtering.</task-description>
 	</metadata>
 </pipeline>
