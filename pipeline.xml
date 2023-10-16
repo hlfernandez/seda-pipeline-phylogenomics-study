@@ -33,6 +33,7 @@
 		<task id="filtering_2" after="filtering_1"/>
 		<task id="rename-header-multipart_2" after="filtering_2"/>
 		<task id="clustal-align" after="rename-header-multipart_2"/>
+		<task id="concatenate" after="clustal-align"/>
 	</tasks>
 	
 	<metadata>
@@ -45,5 +46,6 @@
 		<task-description id="filtering_2">Filter minimum number of sequences.</task-description>
 		<task-description id="rename-header-multipart_2">Header: removes the suffixes added on the fourth task.</task-description>
 		<task-description id="clustal-align">Alignment of the orthologous sequences.</task-description>
+		<task-description id="concatenate">Concatenate all of the aligned gene sequences.</task-description>
 	</metadata>
 </pipeline>
