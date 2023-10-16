@@ -30,7 +30,9 @@
 		<task id="rename-header-add-word" after="rename-header-replace-word_2"/>
 		<task id="blast-ortholog" after="rename-header-add-word"/>
 		<task id="filtering_1" after="blast-ortholog"/>
-		<task id="rename-header-multipart_2" after="filtering_1"/>
+		<task id="filtering_2" after="filtering_1"/>
+		<task id="rename-header-multipart_2" after="filtering_2"/>
+		<task id="clustal-align" after="rename-header-multipart_2"/>
 	</tasks>
 	
 	<metadata>
@@ -39,7 +41,9 @@
 		<task-description id="rename-header-replace-word_2">Header: replaces “.” by “_”. </task-description>
 		<task-description id="rename-header-add-word">Header: adds the string “_suffix_” and an index.</task-description>
 		<task-description id="blast-ortholog">BLAST: two-way ortholog identification operation.</task-description>
-		<task-description id="filtering_1">Sequence filtering.</task-description>
+		<task-description id="filtering_1">Filter valid sequences.</task-description>
+		<task-description id="filtering_2">Filter minimum number of sequences.</task-description>
 		<task-description id="rename-header-multipart_2">Header: removes the suffixes added on the fourth task.</task-description>
+		<task-description id="clustal-align">Alignment of the orthologous sequences.</task-description>
 	</metadata>
 </pipeline>
